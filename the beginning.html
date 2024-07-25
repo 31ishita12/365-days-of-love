@@ -1,0 +1,715 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>the beginning</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b0e8a98d-d7d7-4c38-bc96-afa37d95bf92" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_klimt_1912.jpg" style="object-position:center 12.8%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/heart-outline_pink.svg"/></div><h1 class="page-title">the beginning</h1><p class="page-description"></p></header><div class="page-body"><ul id="8f6acde3-ce65-4849-89fe-7af19cbfd3dc" class="toggle"><li><details open=""><summary>sigh</summary><p id="8ca7f989-b03c-4be9-9710-01a244dac3b7" class="">i look at you and i sigh,</p><p id="e32efcb7-8b2f-437a-918e-096829131b75" class="">i wonder why</p><p id="715e2e2f-3b1d-4e03-b9ab-ea7e182da795" class="">you aren’t mine.</p><p id="d2a0f96d-4200-4580-bf7a-48e1e23f5c3d" class="">wouldn’t it be sweet</p><p id="2f3dd842-332c-4f7f-8651-3584afff8c8b" class="">if we could meet</p><p id="dd12f2af-8151-43c7-961d-4834db10e230" class="">everyday?</p><p id="77046bd7-07e7-43a6-ace2-67fc01e17b78" class="">wouldn’t it be fun</p><p id="fdc46e3b-d768-4e52-9b41-82897b046d23" class="">to have someone</p><p id="1d62b2bc-3425-4a1d-a746-1d29c13251f3" class="">to love you?</p><p id="57f5409d-2cc3-4afa-b470-47f0021f089f" class="">
+</p></details></li></ul><p id="19221412-a047-4f43-b547-619f3368e7a9" class="">
+</p><ul id="31f9f8e4-d753-47dc-a881-e07a82dab86a" class="toggle"><li><details open=""><summary>confess</summary><p id="92052245-df3c-4c85-a54e-1ccb2f2aeacd" class="">i want to have lunch with him</p><p id="ddafa92a-a4e9-48f6-88ad-996db0a05ba7" class="">and ask him questions</p><p id="ab178822-b306-430e-b345-552de1db1994" class="">that is such a silly suggestion!</p><p id="45b20e1a-7547-40a9-b5b9-0680d8ec3438" class="">stop thinking about it</p><p id="a62cff19-d3aa-479a-b84e-aecb49455b68" class="">he won’t say yes.</p><p id="ff4f536c-207f-4598-bffd-c8ee68846bc5" class="">
+</p><p id="54210cdd-2818-44ce-8e31-8028ce3ae038" class=""><em>you’re starting to like him</em></p><p id="49a0c368-f22e-45d0-a79e-59384ca16b3b" class=""><em>won’t you confess?</em></p></details></li></ul><ul id="5fcd4776-f385-429e-b880-c6249517928a" class="toggle"><li><details open=""><summary>wonderland</summary><p id="5a583d22-8f97-4708-a86a-4eb9e5f5c5ec" class="">with flushed cheeks and a heart full of love</p><p id="4b5eb39e-cbff-49f5-917f-7b59c330cccc" class="">i drifted into a wonderland</p><p id="5d426247-dd2b-4574-806e-9247f391796e" class="">you were there</p><p id="7494f5b1-f69c-4e1b-97d4-b5af5ec21877" class="">with me</p><p id="a38c2377-6833-4387-9211-714068983f82" class="">we were walking by the sea</p><p id="450aeef0-07a8-47e6-9b3f-7c839a74133b" class="">hand in hand</p><p id="3a81c2a0-7774-4937-aa8d-7d8f6fda0d35" class="">
+</p><p id="132cd721-ab4d-40ad-b49a-2142c98d6885" class="">isn’t it lovely</p><p id="517484ca-3d19-4b29-a275-4a5a2da9442a" class="">to be in love and be so free?</p><p id="d6eab1fd-1f28-4c31-9a4d-15af11618ec8" class="">
+</p><p id="582e249f-4f92-4b40-bf74-2d6a7478f2c3" class="">but will it be</p><p id="e7b099c8-eca7-4bac-9f27-a8fc9cc16207" class="">that you and me</p><p id="b843ec0a-f934-46c8-a8aa-bfe018404085" class="">be together in reality?</p><p id="d1dcada8-551f-4745-9169-6b20279f31cd" class="">
+</p></details></li></ul><ul id="907fc1f9-aa28-4400-87a2-eee2e5c78608" class="toggle"><li><details open=""><summary>maybe</summary><p id="fe253a4d-ee9b-4368-af36-3bc415b66518" class="">it isn’t easy</p><p id="c7b33ca9-0bc2-4ad5-b524-78079fa2f6e9" class="">to bottle up my feelings</p><p id="7ae6dd6e-5ed8-4bcc-a121-1b070ea524a6" class="">i’m thinking about you</p><p id="2acb9b8d-da3b-4a26-82d2-43c32567e4bd" class="">while staring at the ceiling </p><p id="a082c703-43ae-44fe-8bc4-55b61b1edc62" class="">
+</p><p id="ab6d6a66-679a-485e-bd70-b3f157a2b71e" class="">can it not be true</p><p id="09f5d31a-867e-4a39-a89a-9934f2296dea" class="">that me and you</p><p id="4a8bc910-ecc5-4b33-9907-39f3cdb18739" class="">be called an “us”?</p><p id="38d52355-9679-4ae8-89bf-542b337432d0" class="">
+</p><p id="4ebea4e5-7666-41c9-b566-ffd393f1dce2" class="">can it not be true</p><p id="3750ac9e-b05c-4d54-8b03-be6a7eccf904" class="">that our “maybes” one day</p><p id="f72e88e1-a086-4db5-afac-46a2d301ea7d" class="">shall become a “must”?</p></details></li></ul><ul id="4d388455-6437-4bca-a98e-a3144f845cd3" class="toggle"><li><details open=""><summary>dreaming pt. 1</summary><p id="f4b6956d-e774-463c-a815-092b6459c58b" class="">your serene face</p><p id="cd8cb1ab-cfcd-468d-9704-4ce3676d0660" class="">comes every day </p><p id="80763f71-f08b-4527-9106-e17e7bb5ab01" class="">in my dreams</p><p id="9e745ec1-dc15-4553-a3c2-7badf44721ca" class="">
+</p><p id="0b0392e1-a6bb-4ed0-821c-635e235acc7f" class="">your devilish smile</p><p id="2d63d05b-4b71-4d1f-9dc9-87bcedfe4a81" class="">sends shivers of delight</p><p id="735e9988-8139-4d95-977a-f2ac6fe9837f" class="">every time i see it</p><p id="114f7019-6900-4e7c-bfe7-94eab3c711da" class="">
+</p><p id="5c2ab985-576c-418c-9c6a-fd59a9fd0884" class="">those “rosy” lips</p><p id="843724b7-a48d-4b6a-92ab-474ec8847c98" class="">chant promises to me </p><p id="fccc55aa-6d4b-4bca-b76a-f43a1cadd114" class="">that you can’t keep</p><p id="989d9130-c15f-4903-a9aa-84b57685ce52" class="">
+</p><p id="0a383f87-c3ce-4437-bd14-1fe3c2ce9942" class="">please come everyday,</p><p id="f58e0f92-9196-457c-a305-91a2b1be9b64" class="">i say.</p><p id="e8bf5fdc-cba4-4100-aca1-cfc2d4588543" class="">you smile<div class="indented"><p id="c0a0a5d2-1fa0-46b2-b2cf-dcdd758a771b" class="">for a while<div class="indented"><p id="bda31087-f91d-47d2-8348-e0368ee0e4cc" class="">until you vanish again.</p><p id="0637951d-c93f-4015-a75d-edf15ca60258" class="">
+</p></div></p></div></p><p id="c5958319-10f5-462f-b39d-9e1341406f2b" class="">and slowly,<div class="indented"><p id="d8427342-d96a-4507-b5ae-3678375c4634" class="">very slowly,<div class="indented"><p id="b7e18fc7-cf39-459c-a32a-d7ec649bb5d3" class="">my eyes open<div class="indented"><p id="5f0b7c48-a9ad-4f47-8f04-79ef86e1a3a9" class="">and i am awakened from this lovely dream.</p></div></p></div></p></div></p><p id="9e5ad66b-aa46-4308-a693-24871535d30b" class="">
+</p></details></li></ul><ul id="cd40211f-fc73-4750-b05b-343e2d5a60fb" class="toggle"><li><details open=""><summary>dreaming pt. 2</summary><p id="fb3bf8e9-8544-4841-afa8-2d21592096f1" class="">let us hold our hands again</p><p id="a71cfc52-d2c5-4dec-98d0-69e42c0b2947" class="">like we did in my dream</p><p id="b23552fa-8c4b-499b-ac32-555d54d79535" class="">let’s laugh our hearts out</p><p id="3a59ca8d-29a6-40b3-92b0-2be719bbd3b5" class="">and play stupid games</p><p id="6044bf5f-7502-4265-b370-08bc472351bb" class="">
+</p><p id="23b51bd5-faff-406f-b9fa-e837b7e78020" class="">do you know how happy we were</p><p id="8d3ca2a9-074c-4e2c-b5b7-12808c3d6dde" class="">in my dream of me and you?</p><p id="7f8e8235-a4cf-4a7c-9f98-05a05eb572d0" class="">the reality is so different</p><p id="8def8a95-cc0b-4e92-9ce3-f31e9a8568af" class="">where you don’t even have a clue!</p></details></li></ul><ul id="9694cedf-1f6e-4e8d-8518-c60ad040aa31" class="toggle"><li><details open=""><summary>transitions</summary><p id="cf2aade9-1bfb-452e-91b4-ee74c9e1775e" class="">a reply from you </p><p id="828ab893-ce98-436a-b601-16bd186beef8" class="">changed everything I knew </p><p id="e140a6e7-7dc5-4179-acb1-c287f087c05b" class="">
+</p><p id="ab14c421-8979-4eb9-a6fc-91bdd2779669" class="">a walk in the dark</p><p id="5da3f246-ab8e-41ba-9607-e9f6e9b50c9a" class="">brought us closer than apart </p><p id="90786205-dac4-4109-bf19-4a570786c3d6" class="">
+</p><p id="c8b04542-9692-4b28-ba8f-ea87b8f7cc1b" class="">the night we sat at your window, wondering, confused </p><p id="349860ff-97c4-4c27-aef4-75cb4269d6b2" class="">are we meant to be or is it just a ruse </p><p id="d7d209ae-6f09-414e-b07b-283b0e927e18" class="">
+</p><p id="10092e4e-0726-4ba3-8fd6-4e7486431697" class="">we kiss and cuddle and</p><p id="d7980143-9172-4103-a475-ddc507599582" class="">suddenly it’s day</p><p id="abf79aae-1c06-4bb3-b005-1d03615375e1" class="">
+</p><p id="d695f5fa-5f38-441c-8c13-3782fac3c74d" class="">
+</p><p id="2c3df9f9-3497-4d4e-b58b-d6cbc54bf657" class="">now’s the time to run away </p></details></li></ul><ul id="59ca8756-abbb-44a5-b1da-0bc1d36aec68" class="toggle"><li><details open=""><summary>run</summary><p id="96282dde-ba60-42c9-9275-4232dad76bf2" class="">i thought you would run away</p><p id="69a13f43-20fc-4b31-8a46-11df15667a79" class="">didn’t know you intend to stay</p><p id="5769f68e-e82c-422f-87c2-fe965816b3cd" class="">now i wait every thursday</p><p id="6e51b599-c78b-4483-8cff-1633ab288edb" class="">to kiss your beautiful face</p></details></li></ul><ul id="3c8f53f8-fb6a-4153-8788-8c2cde438c4c" class="toggle"><li><details open=""><summary>how to begin?</summary><p id="daa272b2-0bbd-4b56-975f-5a2ac633e980" class="">can i tell you something?</p><p id="8f8a70e8-f1a4-4d88-80d5-168f0d8592c4" class="">the big things and the little things?</p><p id="3e079088-2f36-4a3e-bb92-be2fc2094fd6" class="">i ate an apple today.</p><p id="05b1c3c1-9003-4cc3-96f8-8106e1011518" class="">came back from work too late.</p><p id="ba93c5b9-e220-48bd-90e4-a01623ee29d0" class="">i shampooed my hair twice.</p><p id="fa941438-5923-447c-9ad2-227febf9cf24" class="">bought strawberries for half the price!</p><p id="3eaf37a0-75ef-406b-8109-c067ff458421" class="">oh and i also took a walk;</p><p id="4baf3c8d-8ed5-40ed-a01d-ee4bada8e011" class="">what a bummer that we couldn’t talk!</p><p id="dea279d4-9b8f-4dee-b29c-41d29898257f" class="">
+</p><p id="4e2c221c-b6da-4e4d-91ec-e86ca3f910cb" class="">can i tell you the little things?</p><p id="c09dab57-9ef4-4bba-9b6d-5a5493f02821" class="">will you want to listen?</p><p id="cf988f98-c7c7-4fe3-be55-42eb85722633" class="">can i show you all my pictures </p><p id="47a41ff9-bad1-460b-9b9b-fc4e5b5956b4" class="">and show the brownian motion </p><p id="828ef0fc-3ca1-48cd-a9a0-6d987e193be8" class="">of the thoughts inside my head?</p><p id="b771c2cd-e96e-4ec8-b658-ff21d87bbf52" class="">or should i keep it all to myself instead?</p><p id="b5802065-feb7-4821-b858-c77bac6b91ee" class="">
+</p><p id="6aee4406-d2a8-4ea5-abd8-2d403a803dd9" class="">i don’t know how to be close to you.</p></details></li></ul><ul id="dbc0df22-e360-4ac9-a115-528d1bc55a7d" class="toggle"><li><details open=""><summary>a rainy day</summary><p id="7d64f2ab-cf53-4a64-b647-a6f6b09d70dc" class="">we were walking together</p><p id="3f81ce96-662b-4ec6-bdd3-2340802b0b83" class="">talking about the weather</p><p id="4cbaf7af-f39a-4f30-ae44-a1a5fda8c590" class="">the sun looked beautiful</p><p id="863f3b33-e110-4269-8552-3d485a3e56c9" class="">the breeze was soft and cool.</p><p id="c91f58a9-8381-46c5-a75e-d66ca8c0fd52" class="">suddenly you feel a drop</p><p id="188e9695-685b-4109-9c99-a98feed1c449" class="">on your feet and then on top</p><p id="3348a028-e5d7-426f-993f-c24bbd360702" class="">of your head, your hand, your lips;</p><p id="dca45d73-0a1e-4118-bf16-3fd698d542c1" class="">you joked how it was a perfect moment to kiss</p><p id="d1412cbb-f9de-4412-98c6-fa2fbff30714" class="">i laughed, told you “let’s run!”</p><p id="461b5887-ec93-4f0c-8225-8e50f1bf2f42" class="">the nearest shed was the deserted station.</p><p id="32581ec5-52e0-40a7-a696-e534cf54372a" class="">we sat at a bench, you were smiling looking at me.</p><p id="71cef723-9912-42aa-8001-80596aa40a4c" class="">“what?” i ask,</p><p id="9b09acba-59d0-49e8-ae31-a88e7f294374" class="">“you’re so pretty”, you said</p><p id="74abd4b3-989d-4778-93ba-d677ab48bbfe" class="">and smiled again</p><p id="b7a5b39a-09df-4426-aae8-8057a04c5f24" class="">there was silence between us, except for the rain…</p><p id="ebce7d1f-4e8c-4cbe-b354-0e8cf1780dec" class="">“i wasn’t joking earlier, you know”,</p><p id="c21edffe-1ee0-429c-92ee-ebe84305f454" class="">i hear you say after a minute or so.</p><p id="b03bd998-3a8a-4256-b534-46c2eb9ae63b" class="">it was still raining,</p><p id="971059c1-482c-4ffd-b890-48755fb3a7ff" class="">you were so close to me.</p><p id="7d6fb036-195c-4cdc-bf97-d69fae4d6eb5" class="">i gave up resisting and let us be…</p><p id="e9f83da8-24d8-42f0-ab1a-15072b6dbc72" class="">the rain stopped soon, the sun set down.</p><p id="6bd94ab4-ced7-4e94-b7a8-4d57f836f7ac" class="">we were walking again,</p><p id="6e08505d-df64-42fd-8c24-f3e6d509aace" class="">your hand around me, a smile on my face</p><p id="9f50e673-c616-42af-9a77-b55684dbce37" class="">we weren’t taling</p><p id="15e127c7-de90-4753-b3cc-364aa8ec5383" class="">you weren’t joking</p><p id="e1f87ee7-a56e-4b73-a8b7-7553425ca556" class="">
+</p><p id="84c4d08d-31a2-4404-a90a-dbfa656bdb43" class="">it was a perfect rainy day with you</p></details></li></ul><ul id="1279d717-92ec-407c-bcfd-33b94e5c0b1b" class="toggle"><li><details open=""><summary>love me</summary><p id="792862a3-8d33-41db-8691-309510a7b3da" class=""><em>you are so beautiful</em></p><p id="442ad705-2d97-4485-b411-2b9e4913fcca" class="">he said</p><p id="47c40273-522e-4384-8b01-59ac59969e75" class=""><em>let me kiss you</em></p><p id="da12e2a3-ebb3-4bd3-8557-0daf0b38c96e" class="">
+</p><p id="2a777ca6-1ae0-4e7c-a649-81f8370cb2b7" class="">why should i deny msyelf</p><p id="e50d2b6a-9b82-44c9-84c0-e671da301e3f" class="">the opportunity to be loved?</p></details></li></ul><ul id="dbef711c-32e7-40cb-b423-54756824bdd1" class="toggle"><li><details open=""><summary>lovely</summary><p id="11a45fc4-775b-4610-abbf-dff93d483052" class="">my oh my oh my</p><p id="5afb4cdd-3175-416a-8f68-7f7e62bd3214" class="">look at your beautiful smile</p><p id="f0a0989e-8ffc-4c3a-b0e9-15895ca2fbed" class="">look how it fills me with joy,</p><p id="618bbeee-4bfa-4ed7-acb9-9f4a2445be0b" class="">warmth and so much love</p><p id="dc8769c6-4b57-4a51-91c1-82d4d6b0b7ac" class="">my eyes</p><p id="5dcedc5d-4ee9-46b3-adde-b961564d325c" class="">are wide open</p><p id="1ab7e3df-8453-4622-98b7-7c5fb5530a36" class="">to soak all of you forever in my mind</p><p id="591f7716-5619-4087-88dd-79047e4b581b" class="">
+</p><p id="3b87f716-1fb5-4060-a1a6-d1a6349aeeae" class="">we are in shortage of time</p><p id="f1ce39d0-51e2-4a31-a3ca-421e5e966964" class="">but so many stories still left to tell</p><p id="ce22e256-9954-4c87-ae0d-904ac2f22930" class="">would you share yours first</p><p id="28c1e831-29bf-4860-bd0e-2b9e789afc1e" class="">or should i tell you mine?</p><p id="71fa807d-c931-44cb-9574-54ff87a80b87" class="">
+</p><p id="771ed12a-f3b6-4216-aa8a-de4f471708a4" class="">is this fine?</p><p id="12274ba3-efe9-4645-922e-c807195aa6a2" class="">for us to be who we were are?</p><p id="672b7e80-29db-40cd-873c-7e6888f4eadd" class="">or would you like to cross the line?</p></details></li></ul><ul id="dda5463f-414d-4d54-9fcf-ca797162ce9d" class="toggle"><li><details open=""><summary>in love again</summary><p id="a35a0c00-77b5-4e82-a6c7-e98d8b6b63f3" class="">i am in love again.</p><p id="b4f36b55-38af-4302-803e-cc7a1d508fa6" class="">this time it is really different</p><p id="2e3a453a-30cc-4800-9fed-9d73519fd8fc" class="">he listens to me like no one ever did before</p><p id="23abafa7-9150-408b-af9b-0a06fe4ca2b7" class="">and remembers the most trivial informations</p><p id="57f7a800-8fff-48d2-a97e-5fcffd60a2e6" class="">about me.</p><p id="9cb75215-250b-400e-8280-f7cea970ce09" class="">
+</p><p id="5bcc4799-9afe-450a-a66e-5eb820798c85" class="">i am in love again.</p><p id="3ac38763-d1bd-432c-9560-dc23aef0c5e1" class="">and this time, i am telling the whole world</p><p id="a3decf7e-20fc-4dbb-87d0-f37c88c9e7b8" class="">(except for my parents, of course!)</p><p id="9f84effa-70e6-4ac3-a7ff-3678f4e50784" class="">but i think they will know soon too</p><p id="7342a0cb-9c1b-42c5-ae74-3c85f46723d7" class="">because i’ve fallen real bad for him</p><p id="04854426-2e4f-42ae-b040-0c921ae2afa3" class="">and i don’t know how to get back up.</p><p id="a9eb0e8a-3124-4b15-8f62-3e89dfefc907" class="">
+</p><p id="ab2d0f51-575b-4296-9c69-4b04aa43aea4" class="">i am in love again.</p><p id="a0bb7643-a57e-46cc-a817-11991c1307de" class="">i don’t know if it is a dream</p><p id="74bab652-4921-4b55-9ff8-13dbcd0e0664" class="">but damn he makes me feel so seen!</p><p id="f9aeec3f-5175-4f16-86a8-dffcf6b1b2bc" class="">i want to love him forever,</p><p id="5000ebfe-97e8-4226-a0d4-9339ee0a6a4b" class="">it’s the happiest i have ever been!</p></details></li></ul><ul id="c0f0e19a-3a07-4a5b-a335-9f03a6c8ef8b" class="toggle"><li><details open=""><summary>sharing pasts</summary><p id="9bc29fe7-f399-4032-ac34-97d081cfe08a" class="">thank you for baring your heart out to me<div class="indented"><p id="abed133a-840d-411d-a4c8-a06126cab142" class="">you didn’t really have to,<div class="indented"><p id="2422564f-ef61-4b73-beb7-636d1182a92e" class="">yet you did</p><p id="5c1a4c62-ac67-469e-a625-03da22705e81" class="">
+</p></div></p></div></p><p id="3fb157ae-b55c-4cb6-abae-b12a27395ffa" class="">my heart feels for you deeply —<div class="indented"><p id="0c307866-1fd8-4248-9ac0-46cca6a8bbe5" class="">for all the moments of pain and heartaches,</p><p id="4ad970b8-a08f-4575-a7b0-bdccf4d85cf5" class="">failed expectations, betrayals, those long breaks</p><p id="6e57c22e-f458-4794-b385-315480226667" class="">of silences and those moments when you’d take</p><p id="d74f5f9d-6cab-4131-ae1e-35c19a727181" class="">to look inside of you.</p><p id="360cf558-5cfb-4dfc-9c38-000054443a08" class="">
+</p></div></p><p id="05959b5b-a889-430e-b48a-b0497737ce1c" class="">thank you for baring your heart out to me</p><p id="f621331f-1249-4ed7-94fe-cf0349f99d1d" class="">for showing this little girl<div class="indented"><p id="e70938fd-21fb-4a35-ab3d-ca1e699c729f" class="">what love can truly be</p><p id="d1e5e349-82cb-4781-b7dd-92b690dcbcc9" class=""> and that a man can be vulnerable too</p><p id="68970a7c-6a8b-45d5-bf6c-7529e68ca7d1" class="">that you have it in you</p><p id="cd0f859d-1ab2-411a-a08f-a007536de387" class="">to love and be loved back unconditionally.</p><p id="365fc321-a356-4cd9-8114-938eb9468a8e" class="">
+</p><p id="d265a857-8ae5-40b6-b14a-2c58fcc5af56" class="">
+</p></div></p></details></li></ul><ul id="b877b226-7cdc-4899-bc18-8d968e7c0dfe" class="toggle"><li><details open=""><summary>art of love</summary><p id="fa1fce10-4778-4ccd-9616-84cbb2c970b4" class="">loving is an art</p><p id="0d89212d-07ea-4391-bca1-e6f48d346483" class="">but you do not have to perfect it</p><p id="16b933fd-659d-4b99-9bf3-d63056dbb2cd" class="">loving is addictive</p><p id="b80786ca-51e5-4fe0-a3da-7fdc8963887c" class="">you can never not want it</p><p id="74ad6747-5903-4a51-afd3-a0095362eee2" class="">so when she says “you really love being loved”</p><p id="d1ef9584-c0c9-4125-95ee-a5d5de510271" class="">would she not have loved it too?</p><p id="d1d2ba55-9fb4-4a58-a9f2-697730f6cc82" class="">i know i do</p><p id="4f812d6c-e6fe-4cae-a898-8de0a0b04039" class="">i know you do too</p><p id="6fbb2c1b-9ed9-4e5f-a3a5-ec710e84c3a1" class=""><em>wouldn’t the world be a better place</em></p><p id="908e2d94-f670-4dc7-b2bd-c4b54c1c966c" class=""><em>if only we could love a little more?</em></p></details></li></ul><ul id="8857fe8d-6c86-486a-8dc8-68b8a825ac34" class="toggle"><li><details open=""><summary>a girl in love</summary><p id="2393a15c-2e46-4146-a753-e0724d551723" class="">I don’t wish to look at my phone<br/>constantly <br/></p><p id="a88d8b76-a413-4eb0-8ee4-606faa7739fd" class="">to see </p><p id="56b0e5a5-549e-42e2-969e-e6699a9ea467" class="">what’s up with you</p><p id="daaa218d-b073-486e-b633-32eec1aa7271" class=""><br/>who you’re with<br/></p><p id="ddd5183c-9578-4b54-bd09-8737b7de714e" class=""><br/>what you’re thinking<br/></p><p id="45208258-0ed8-440a-8889-19f20454d1ad" class="">
+</p><p id="56aa6ea3-bde9-48e7-b5d6-fe93e9c99ea4" class="">but i also wish to know all of it</p><p id="55d30d8a-0b06-4c14-9f3e-591ff814a682" class="">every </p><p id="a05ac817-184b-4ce6-8a54-ffb426b29bda" class="">single </p><p id="0596bba5-67cb-4b4a-b555-fe8978ab334e" class="">second</p><p id="8a87891f-b3ba-421b-a561-0d17d611460d" class="">
+</p><p id="520506a7-a771-4873-b51c-cfdc4b280ec3" class="">what’s a girl in love to do?</p></details></li></ul><ul id="a8835d17-b736-4ffc-a201-e0587b981367" class="toggle"><li><details open=""><summary>first date</summary><p id="2e2df149-ac75-44d7-9583-25730b496dd0" class="">a vivid hue i saw outside</p><p id="f8e1e4ae-bbd6-46c3-9251-f263e38219f9" class="">as we wandered through the park, </p><p id="586ee603-78b7-4f1a-a158-f29ef6785475" class="">hands entwined</p><p id="6ee4faba-7b18-4599-a0e6-ba534b4e0c05" class="">savoring stolen glances</p><p id="e2c117e4-6afd-428c-b41a-f5e6c33c2a24" class="">and whispered secrets.</p><p id="0700099e-901b-4298-9507-307463d2fbb7" class="">each touch, a brushtroke on the canvas</p><p id="f5a7946e-415b-4955-a2e6-98a8f89a4a44" class="">the canvas of our day was quite a sight!</p><p id="83a134c6-428d-4bb6-a216-6bdff28068ed" class="">every stolen kiss was a silent vow</p><p id="09752c66-711c-4b1c-9d9e-79c1bffea8fb" class="">to love each other a little more</p><p id="28fb28cd-bd9c-4132-8d08-cc06b6e1353f" class="">the only witness was the squirrel that stood by…</p><p id="45f91924-dc72-44c5-8f7c-89aa879c595d" class="">our sweet love surpassed the sugar high </p><p id="cc1c5f7e-5917-4c60-b578-81970292f282" class="">from the slushies we had;</p><p id="9fb8f226-0bb7-4ae1-8074-88270c4a46a3" class="">we reveled in our clandestine dance</p><p id="2e55b746-180c-493b-84b1-dbc3919d2a49" class="">isn’t it lovely to give love a chance?</p></details></li></ul><p id="87babeff-9825-4dcf-b2e4-cbbcd930c3b5" class="">
+</p><p id="bed840b7-a47f-435e-b3f4-4fbc2c29b8f4" class="">
+</p><p id="de17be60-cadc-4a5f-8e4e-4c10360c64ad" class="">
+</p><p id="b06438ae-326b-4f58-ac8d-97b3d4eca0ac" class="">
+</p><p id="6aee91b6-21cd-40dc-a132-94034fcea62b" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
